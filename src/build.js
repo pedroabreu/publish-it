@@ -1,6 +1,6 @@
 const { exec, find, cp, cd, mkdir } = require("shelljs")
 
-const unnamedBuild = (args) => {
+const box = (args) => {
     const {
         copySrc,
         extraFilesCopy,
@@ -18,7 +18,7 @@ const unnamedBuild = (args) => {
 
     if (copySrc) {
         const originalCopyFolder = `${libFolder}/${copySrc}`
-        
+
         mkdir("-p", originalCopyFolder)
 
         const srcFiles = find(`${srcFolder}/*.js`).filter((file) => !file.match(`\/${ignoreFiles}\/`))
@@ -35,4 +35,4 @@ const unnamedBuild = (args) => {
     }
 }
 
-module.exports = unnamedBuild
+module.exports = box

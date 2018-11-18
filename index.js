@@ -1,7 +1,6 @@
-const unnamedBuild = require("./src/build")
+const box = require("./src/build")
 
-
-unnamedBuild({
+box({
     libFolder: "dist",
     srcFolder: "src",
     extraFilesCopy: ["README.md"],
