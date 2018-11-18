@@ -1,0 +1,17 @@
+{
+  "name": "unnamed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src -d dist --ignore \"**/*.spec.js\"",
+    "test": "node ./test/test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "shelljs": "^0.8.3"
+  }
+}
