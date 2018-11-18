@@ -1,14 +1,14 @@
 {
-  "name": "unnamed",
+  "name": "box",
   "version": "1.0.0",
-  "description": "",
+  "description": "box your library",
   "main": "index.js",
+  "author": "Pedro Abreu <pmig.abreu@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "prepublish": "babel src -d dist --ignore \"**/*.spec.js\"",
     "test": "node ./test/test"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
