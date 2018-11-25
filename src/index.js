@@ -6,13 +6,13 @@ const validModules = ["cjs", "es", "umd"]
 
 const publishLib = (args) => {
     const {
-        copyFormats,
+        copyFormats = ["js"],
         extraFilesCopy,
         ignoreFiles,
-        libFolder,
-        modules,
-        publishOnFinish,
-        rootModule,
+        libFolder = "dist",
+        modules = ["cjs"],
+        publishOnFinish = true,
+        rootModule = "cjs",
         srcFolder
     } = args
 
