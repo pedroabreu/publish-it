@@ -12,6 +12,7 @@ const publishLib = (args) => {
         libFolder = "dist",
         modules = ["cjs"],
         publishOnFinish = true,
+        packageAccess = "public",
         rootModule = "cjs",
         srcFolder
     } = args
@@ -33,7 +34,7 @@ const publishLib = (args) => {
 
     if (publishOnFinish) {
         cd(libFolder)
-        exec("npm publish")
+        exec(`npm publish --access ${packageAccess}`)
     }
 }
 

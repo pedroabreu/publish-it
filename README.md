@@ -33,5 +33,6 @@ publishLib({
 | `copyFormat` | string | Format of files to be copied | `["js"]` |
 | `extraFilesCopy` | array | Extra files that will be copied to published package root | --- |
 | `ignoreFiles` | string | Files to be ignored | --- |
+| `packageAccess` | string | Publish public or restricted package | `public` |
 | `publishOnFinish` | boolean | Publish package on finish. Defaults to true | `true` |
 | `modules` | object | Modules to also be published. These will live in their own folder. Boolean will copy the files, string will treat it as a script and execute it | --- |
