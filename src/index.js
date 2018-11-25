@@ -1,12 +1,11 @@
-const { exec, find, cp, cd, mkdir } = require("shelljs")
+const { exec, cp, cd, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
 
 const validModules = ["cjs", "es", "es5", "umd"]
 
-const publishLib = (args) => {
+const publishLib = args => {
     const {
-        copyFormats = ["js"],
         extraFilesCopy,
         ignoreFiles,
         libFolder = "dist",
@@ -23,9 +22,14 @@ const publishLib = (args) => {
 
     mkdir("-p", libFolder)
 
-    validModules.forEach((module) => {
+    validModules.forEach(module => {
         if (modules.hasOwnProperty(module)) {
-            generateModules(module, modules[module], { libFolder, srcFolder, ignoreFiles, rootModule })
+            generateModules(module, modules[module], {
+                libFolder,
+                srcFolder,
+                ignoreFiles,
+                rootModule
+            })
         }
     })
 

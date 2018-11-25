@@ -16,7 +16,6 @@ const publishLib = require("../src")
 publishLib({
     libFolder: "dist",
     srcFolder: "src",
-    copyFormats: ["js"],
     extraFilesCopy: ["README.md"],
     ignoreFiles: "*.spec.js",
     publishOnFinish: false,
@@ -43,7 +42,6 @@ Add a script to your package.json file
 | --- | --- | --- | --- |
 | `libFolder` | string | Folder that will be the root of the published package. | `dist` (Add it to your .gitignore) |
 | `srcFolder` | string | Location of the source files | --- |
-| `copyFormat` | string | Format of files to be copied | `["js"]` |
 | `extraFilesCopy` | array | Extra files that will be copied to published package root | --- |
 | `ignoreFiles` | string | Files to be ignored | --- |
 | `packageAccess` | string | Publish public or restricted package | `public` |
