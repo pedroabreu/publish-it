@@ -1,13 +1,13 @@
 {
-  "name": "publish-lib",
+  "name": "publish-it",
   "version": "0.1.5",
-  "description": "Publish your library with different modules",
+  "description": "Publish your library differently",
   "main": "index.js",
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
   "license": "MIT",
   "repository": "github:pedroabreu/publish-lib",
   "scripts": {
-    "publish-lib": "node ./scripts/publish.js"
+    "publish-it": "node ./scripts/publish.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
