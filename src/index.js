@@ -10,8 +10,9 @@ const publishLib = (args) => {
         extraFilesCopy,
         ignoreFiles,
         libFolder,
-        publishOnFinish
-        srcFolder,
+        modules,
+        publishOnFinish,
+        srcFolder
     } = args
 
     if (!libFolder) {
@@ -21,8 +22,8 @@ const publishLib = (args) => {
     mkdir("-p", libFolder)
 
     validModules.forEach((module) => {
-        if (args.hasOwnProperty(module)) {
-            publishLibModule(module, args[module], { libFolder, srcFolder, ignoreFiles })
+        if (modules.hasOwnProperty(module)) {
+            publishLibModule(module, modules[module], { libFolder, srcFolder, ignoreFiles })
         }
     })
 

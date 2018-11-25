@@ -1,4 +1,4 @@
-const { exec, find, cp, cd, mkdir } = require("shelljs")
+const { cp, cd, exec, find, ls, mkdir, rm } = require("shelljs")
 
 const publishLibModule = (moduleName, moduleOpts, opts) => {
     const {
@@ -7,16 +7,21 @@ const publishLibModule = (moduleName, moduleOpts, opts) => {
         ignoreFiles
     } = opts
 
-    const originalCopyFolder = `${libFolder}/${moduleName}`
+    const moduleFolder = `${libFolder}/${moduleName}`
 
-    mkdir("-p", originalCopyFolder)
+    mkdir("-p", moduleFolder)
 
     if (typeof moduleOpts === "boolean") {
         const moduleFiles = find(`${srcFolder}/*.js`).filter((file) => !file.match(`\/${ignoreFiles}\/`))
 
-        cp("-f", moduleFiles, originalCopyFolder)
+        cp("-f", moduleFiles, moduleFolder)
     } else {
-        exec(moduleOpts.exec)
+        exec(moduleOpts)
+    }
+
+    // Remove module folder if empty
+    if (!ls(moduleFolder).stdout) {
+        rm("-R", moduleFolder)
     }
 }
 
