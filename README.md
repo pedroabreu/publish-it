@@ -1,8 +1,8 @@
 # publish-it
 
-Attempt to simplify publishing of a js library with different modules and keep it lean. By default it will copy the source files and package.json into the published package root.
+Attempt to simplify publishing of a js library with different types of source files. By default it will copy the source files and package.json into the published package root.
 
-For es and umd modules, it creates a folder for each and allows execution of npm scripts to parse and copy source files
+Default usage is to copy source files and package.json to the published package folder
 
 ## Usage
 
