@@ -17,9 +17,19 @@ const generateModules = (moduleName, moduleOpts, opts) => {
     }
 
     if (typeof moduleOpts === "boolean") {
-        const moduleFiles = find(`${srcFolder}/*.js`).filter((file) => !file.match(`\/${ignoreFiles}\/`))
+        const moduleFiles = find(`${srcFolder}/**/*.js`).filter((file) => !file.match(`\/${ignoreFiles}\/`))
+        // Maintain the sub dir tree structure
+        moduleFiles.forEach((module) => {
+            const path = module.split("/")
+            path.shift()
+            path.pop()
 
-        cp("-f", moduleFiles, moduleFolder)
+            if (path.length) {
+                mkdir("-p", `${moduleFolder}/${path.join("/")}`)
+            }
+
+            cp("-R", module, `${moduleFolder}/${path.join("/")}`)
+        })
     } else {
         exec(moduleOpts)
     }
