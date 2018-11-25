@@ -1,10 +1,11 @@
 {
   "name": "publish-lib",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Publish your library with different modules",
   "main": "dist/index.js",
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
   "license": "MIT",
+  "repository": "github:pedroabreu/publish-lib",
   "scripts": {
     "publish-it": "node ./scripts/publish.js"
   },
