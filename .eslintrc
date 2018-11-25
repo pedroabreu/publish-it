@@ -1,0 +1,4 @@
+{
+  "extends": ["node", "plugin:prettier/recommended"],
+  "parser": "babel-eslint"
+}
