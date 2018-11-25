@@ -48,4 +48,5 @@ Add a script to your package.json file
 | `ignoreFiles` | string | Files to be ignored | --- |
 | `packageAccess` | string | Publish public or restricted package | `public` |
 | `publishOnFinish` | boolean | Publish package on finish. Defaults to true | `true` |
+| `rootModule` | string | One of `es`, `es5`, `cjs` or `umd` | `es` |
 | `modules` | object | Modules to also be published. These will live in their own folder. Boolean will copy the files, string will treat it as a script and execute it | --- |
