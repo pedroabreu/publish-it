@@ -6,7 +6,7 @@
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node ./test/test"
+    "example": "node ./example"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
