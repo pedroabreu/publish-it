@@ -7,8 +7,10 @@ publishLib({
     extraFilesCopy: ["README.md"],
     ignoreFiles: "*.spec.js",
     publishOnFinish: false,
+    rootModule: "cjs",
     modules: {
-        es: true,
-        umd: "yarn something"
+        es: true
+        umd: "npm run something",
+        cjs: "npm run anything"
     }
 })

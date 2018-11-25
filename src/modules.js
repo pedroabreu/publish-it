@@ -1,15 +1,20 @@
 const { cp, cd, exec, find, ls, mkdir, rm } = require("shelljs")
 
-const publishLibModule = (moduleName, moduleOpts, opts) => {
+const generateModules = (moduleName, moduleOpts, opts) => {
     const {
         libFolder,
         srcFolder,
-        ignoreFiles
+        ignoreFiles,
+        rootModule
     } = opts
 
-    const moduleFolder = `${libFolder}/${moduleName}`
+    const isRootModule = rootModule === moduleName
 
-    mkdir("-p", moduleFolder)
+    const moduleFolder = isRootModule ? libFolder : `${libFolder}/${moduleName}`
+
+    if (!isRootModule) {
+        mkdir("-p", moduleFolder)
+    }
 
     if (typeof moduleOpts === "boolean") {
         const moduleFiles = find(`${srcFolder}/*.js`).filter((file) => !file.match(`\/${ignoreFiles}\/`))
@@ -25,4 +30,4 @@ const publishLibModule = (moduleName, moduleOpts, opts) => {
     }
 }
 
-module.exports = publishLibModule
+module.exports = generateModules

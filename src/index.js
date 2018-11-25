@@ -1,8 +1,8 @@
 const { exec, find, cp, cd, mkdir } = require("shelljs")
 
-const publishLibModule = require("./modules")
+const generateModules = require("./modules")
 
-const validModules = ["es", "umd"]
+const validModules = ["cjs", "es", "umd"]
 
 const publishLib = (args) => {
     const {
@@ -12,6 +12,7 @@ const publishLib = (args) => {
         libFolder,
         modules,
         publishOnFinish,
+        rootModule,
         srcFolder
     } = args
 
@@ -23,18 +24,12 @@ const publishLib = (args) => {
 
     validModules.forEach((module) => {
         if (modules.hasOwnProperty(module)) {
-            publishLibModule(module, modules[module], { libFolder, srcFolder, ignoreFiles })
+            generateModules(module, modules[module], { libFolder, srcFolder, ignoreFiles, rootModule })
         }
     })
 
     cp("package.json", libFolder)
     cp("-R", extraFilesCopy, libFolder)
-
-    const hasPrepare = exec("npm run | grep 'prepare' | wc -l")
-
-    if (!parseInt(hasPrepare)) {
-        cp("-R", `${srcFolder}/*.${copyFormats}`, libFolder)
-    }
 
     if (publishOnFinish) {
         cd(libFolder)
