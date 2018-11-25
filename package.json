@@ -1,11 +1,12 @@
 {
   "name": "publish-lib",
   "version": "1.0.0",
-  "description": "publish library extend",
+  "description": "Publish your library with different modules",
   "main": "dist/index.js",
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "publish-it": "node ./scripts/publish.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
