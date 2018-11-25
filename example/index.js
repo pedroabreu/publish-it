@@ -5,6 +5,7 @@ publishLib({
     srcFolder: "src",
     copyFormats: ["js"],
     extraFilesCopy: ["README.md"],
+    ignoreFiles: "*.spec.js",
     publishOnFinish: false,
     modules: {
         es: true,
