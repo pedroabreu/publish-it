@@ -7,6 +7,10 @@ For es and umd modules, it creates a folder for each and allows execution of npm
 ## Usage
 
 ```js
+npm install publish-it --save-dev
+```
+
+```js
 const publishLib = require("../src")
 
 publishLib({
@@ -22,6 +26,15 @@ publishLib({
         cjs: "npm run anything"
     }
 })
+```
+
+Add a script to your package.json file
+
+```json
+"scripts": {
+    ...,
+    "publish-it": "node ./path/to/publish.js"
+}
 ```
 
 ## Configuration
