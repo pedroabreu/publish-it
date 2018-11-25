@@ -1,6 +1,6 @@
 {
   "name": "publish-lib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Publish your library with different modules",
   "main": "dist/index.js",
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
