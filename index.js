@@ -1,8 +1,9 @@
-const box = require("./src/build")
+const publishLib = require("./src")
 
-box({
+publishLib({
     libFolder: "dist",
     srcFolder: "src",
+    copyFormats: ["js"],
     extraFilesCopy: ["README.md"],
     publishOnFinish: true
 })
