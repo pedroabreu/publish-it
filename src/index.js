@@ -2,7 +2,7 @@ const { exec, find, cp, cd, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
 
-const validModules = ["cjs", "es", "umd"]
+const validModules = ["cjs", "es", "es5", "umd"]
 
 const publishLib = (args) => {
     const {
@@ -13,7 +13,7 @@ const publishLib = (args) => {
         modules = ["cjs"],
         publishOnFinish = true,
         packageAccess = "public",
-        rootModule = "cjs",
+        rootModule = "es",
         srcFolder
     } = args
 
