@@ -4,9 +4,10 @@ publishLib({
     libFolder: "dist",
     srcFolder: "src",
     copyFormats: ["js"],
+    dryRun: true,
     extraFilesCopy: ["README.md"],
-    modules: {
+    output: {
         es: true
     },
-    rootModule: "es"
+    root: "es"
 })

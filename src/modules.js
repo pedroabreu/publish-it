@@ -1,20 +1,21 @@
 const { cp, exec, find, ls, mkdir, rm } = require("shelljs")
 
 const generateModules = (moduleName, moduleOpts, opts) => {
-    const { libFolder, srcFolder, ignoreFiles, rootModule } = opts
+    const { libFolder, srcFolder, ignoreFiles, root } = opts
 
-    const isRootModule = rootModule === moduleName
+    const isRoot = root === moduleName
 
-    const moduleFolder = isRootModule ? libFolder : `${libFolder}/${moduleName}`
+    const moduleFolder = isRoot ? libFolder : `${libFolder}/${moduleName}`
 
-    if (!isRootModule) {
+    if (!isRoot) {
         mkdir("-p", moduleFolder)
     }
 
     if (typeof moduleOpts === "boolean") {
         const moduleFiles = find(`${srcFolder}/**/*.js`).filter(
-            file => !file.match(ignoreFiles)
+            file => file.match(ignoreFiles)
         )
+
         // Maintain the sub dir tree structure
         moduleFiles.forEach(module => {
             const path = module.split("/")

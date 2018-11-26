@@ -7,12 +7,12 @@ const validModules = ["cjs", "es", "es5", "umd"]
 const publishLib = args => {
     const {
         extraFilesCopy,
-        ignoreFiles,
+        ignoreFiles = "",
         libFolder = "dist",
-        modules = ["cjs"],
-        publishOnFinish = true,
+        output = ["cjs"],
+        dryRun = false,
         packageAccess = "public",
-        rootModule = "es",
+        root = "es",
         srcFolder
     } = args
 
@@ -23,12 +23,14 @@ const publishLib = args => {
     mkdir("-p", libFolder)
 
     validModules.forEach(module => {
-        if (modules.hasOwnProperty(module)) {
-            generateModules(module, modules[module], {
+        if (output.hasOwnProperty(module)) {
+            console.log(output)
+            console.log(module)
+            generateModules(module, output[module], {
                 libFolder,
                 srcFolder,
                 ignoreFiles,
-                rootModule
+                root
             })
         }
     })
@@ -36,7 +38,7 @@ const publishLib = args => {
     cp("package.json", libFolder)
     cp("-R", extraFilesCopy, libFolder)
 
-    if (publishOnFinish) {
+    if (!dryRun) {
         cd(libFolder)
         exec(`npm publish --access ${packageAccess}`)
     }

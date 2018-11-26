@@ -42,9 +42,9 @@ Add a script to your package.json file
 | --- | --- | --- | --- |
 | `libFolder` | string | Folder that will be the root of the published package. | `dist` (Add it to your .gitignore) |
 | `srcFolder` | string | Location of the source files | --- |
+| `dryRun` | boolean | Skip publishing the package | `false` |
 | `extraFilesCopy` | array | Extra files that will be copied to published package root | --- |
 | `ignoreFiles` | string | Files to be ignored | --- |
 | `packageAccess` | string | Publish public or restricted package | `public` |
-| `publishOnFinish` | boolean | Publish package on finish. Defaults to true | `true` |
-| `rootModule` | string | One of `es`, `es5`, `cjs` or `umd` | `es` |
-| `modules` | object | Modules to also be published. These will live in their own folder. Boolean will copy the files, string will treat it as a script and execute it | --- |
+| `root` | string | One of `es`, `es5`, `cjs` or `umd` | `es` |
+| `output` | object | Type of files to output | --- |
