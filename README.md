@@ -43,6 +43,7 @@ Add a script to your package.json file
 | `libFolder` | string | Folder that will be the root of the published package. | `dist` (Add it to your .gitignore) |
 | `srcFolder` | string | Location of the source files | --- |
 | `dryRun` | boolean | Skip publishing the package | `false` |
+| `fileFormat` | array | File format to copy | `["js"]` |
 | `extraFilesCopy` | array | Extra files that will be copied to published package root | --- |
 | `ignoreFiles` | regex | Files to be ignored | --- |
 | `packageAccess` | string | Publish public or restricted package | `public` |

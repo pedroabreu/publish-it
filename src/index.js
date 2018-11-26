@@ -8,6 +8,7 @@ const publishLib = args => {
     const {
         extraFilesCopy,
         ignoreFiles,
+        fileFormat = ["js"],
         libFolder = "dist",
         output = ["cjs"],
         dryRun = false,
@@ -28,7 +29,8 @@ const publishLib = args => {
                 libFolder,
                 srcFolder,
                 ignoreFiles,
-                root
+                root,
+                fileFormat
             })
         }
     })

@@ -3,9 +3,8 @@ const publishLib = require("../src")
 publishLib({
     libFolder: "dist",
     srcFolder: "src",
-    copyFormats: ["js"],
-    ignoreFiles: /spec.js/,
-    dryRun: true,
+    fileFormat: ["js"],
+    ignoreFiles: /spec./,
     extraFilesCopy: ["README.md"],
     output: {
         es: true

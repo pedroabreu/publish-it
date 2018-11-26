@@ -1,7 +1,7 @@
 const { cp, exec, find, ls, mkdir, rm } = require("shelljs")
 
 const generateModules = (moduleName, moduleOpts, opts) => {
-    const { libFolder, srcFolder, ignoreFiles, root } = opts
+    const { libFolder, srcFolder, ignoreFiles, root, fileFormat } = opts
 
     const isRoot = root === moduleName
 
@@ -12,7 +12,8 @@ const generateModules = (moduleName, moduleOpts, opts) => {
     }
 
     if (typeof moduleOpts === "boolean") {
-        const moduleFiles = find(`${srcFolder}/**/*.js`).filter(
+        const filesToFind = fileFormat.map(value => `${srcFolder}/**/*.${value}`)
+        const moduleFiles = find(filesToFind).filter(
             file => !file.match(ignoreFiles)
         )
 
