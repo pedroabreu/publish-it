@@ -44,7 +44,7 @@ Add a script to your package.json file
 | `srcFolder` | string | Location of the source files | --- |
 | `dryRun` | boolean | Skip publishing the package | `false` |
 | `extraFilesCopy` | array | Extra files that will be copied to published package root | --- |
-| `ignoreFiles` | string | Files to be ignored | --- |
+| `ignoreFiles` | regex | Files to be ignored | --- |
 | `packageAccess` | string | Publish public or restricted package | `public` |
 | `root` | string | One of `es`, `es5`, `cjs` or `umd` | `es` |
 | `output` | object | Type of files to output | --- |

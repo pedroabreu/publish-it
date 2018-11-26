@@ -7,7 +7,7 @@ const validModules = ["cjs", "es", "es5", "umd"]
 const publishLib = args => {
     const {
         extraFilesCopy,
-        ignoreFiles = "",
+        ignoreFiles,
         libFolder = "dist",
         output = ["cjs"],
         dryRun = false,
@@ -24,8 +24,6 @@ const publishLib = args => {
 
     validModules.forEach(module => {
         if (output.hasOwnProperty(module)) {
-            console.log(output)
-            console.log(module)
             generateModules(module, output[module], {
                 libFolder,
                 srcFolder,

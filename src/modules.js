@@ -13,7 +13,7 @@ const generateModules = (moduleName, moduleOpts, opts) => {
 
     if (typeof moduleOpts === "boolean") {
         const moduleFiles = find(`${srcFolder}/**/*.js`).filter(
-            file => file.match(ignoreFiles)
+            file => !file.match(ignoreFiles)
         )
 
         // Maintain the sub dir tree structure
