@@ -1,8 +1,12 @@
 # publish-it
 
-Attempt to simplify publishing of a js library with different types of source files. By default it will copy the source files and package.json into the published package root.
+Attempt to simplify publishing of a js library with different types of source files.
 
-Default usage is to copy source files and package.json to the published package folder
+### Why should I use this ?
+
+I've started developing a private util library and realized there was no obvious, straight-forward way of publishing a package with different source files. I investigated what other utils packages are doing and got some inspiration from lodash, that has on it's root, the es5 files and a folder for the es files, so this way the consumer could decide which one to go for.
+
+So this is the main use case of this package, to be able to publish your library simply be defining what type of files are you publishing. It runs under the hood `npm publish` so it should be able to work together with post publish scripts.
 
 ## Usage
 
@@ -11,15 +15,15 @@ npm install publish-it --save-dev
 ```
 
 ```js
-const publishLib = require("../src")
+const publishLib = require("publish-it")
 
 publishLib({
     libFolder: "dist",
     srcFolder: "src",
     extraFilesCopy: ["README.md"],
     ignoreFiles: "*.spec.js",
-    publishOnFinish: false,
-    modules: {
+    dryRun: false,
+    output: {
         es: true,
         umd: "npm run something",
         cjs: "npm run anything"
