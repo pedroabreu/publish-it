@@ -36,16 +36,16 @@ or
 
 ```json
 {
-    libFolder: "dist",
-    srcFolder: "src",
-    extraFilesCopy: ["README.md"],
-    ignoreFiles: /spec./,
-    dryRun: false,
-    output: {
-        es: true,
-        umd: "npm run something",
-        cjs: "npm run anything"
-    }
+	"libFolder": "dist",
+	"srcFolder": "src",
+	"extraFilesCopy": ["README.md"],
+	"ignoreFiles": "/spec./",
+	"dryRun": false,
+	"output": {
+		"es": true,
+		"umd": "npm run something",
+		"cjs": "npm run anything"
+	}
 }
 ```
 
@@ -53,7 +53,7 @@ Add a script to your package.json file
 
 ```json
 "scripts": {
-    ...,
+    "...": "",
     "publish-it": "node ./path/to/publish.js"
 }
 ```
