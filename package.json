@@ -11,8 +11,6 @@
     "publish-it": "node ./scripts/publish.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.9.0",
     "eslint-config-node": "^4.0.0",
