@@ -1,7 +1,6 @@
 {
-    libFolder: "lib",
+    libFolder: "dist",
     srcFolder: "src",
-    dryRun: true,
     fileFormat: ["js"],
     ignoreFiles: /spec./,
     extraFilesCopy: ["README.md"],
