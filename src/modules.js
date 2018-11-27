@@ -1,7 +1,9 @@
 const { cp, exec, find, ls, mkdir, rm } = require("shelljs")
 
-const generateModules = (moduleName, moduleOpts, opts) => {
-    const { libFolder, srcFolder, ignoreFiles, root, fileFormat } = opts
+const { getConfig } = require("./config")
+
+const generateModules = (moduleName, moduleOpts) => {
+    const { libFolder, srcFolder, ignoreFiles, root, fileFormat } = getConfig()
 
     const isRoot = root === moduleName
 

@@ -19,6 +19,7 @@
     "prettier": "^1.15.2"
   },
   "dependencies": {
+    "cosmiconfig": "^5.0.7",
     "shelljs": "^0.8.3"
   }
 }
