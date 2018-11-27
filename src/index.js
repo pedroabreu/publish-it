@@ -1,21 +1,20 @@
 const { exec, cp, cd, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
+const { getConfig, setConfig } = require("./config")
 
 const validModules = ["cjs", "es", "es5", "umd"]
 
 const publishLib = args => {
+    setConfig(args)
+
     const {
+        dryRun,
         extraFilesCopy,
-        ignoreFiles,
-        fileFormat = ["js"],
-        libFolder = "dist",
-        output = ["cjs"],
-        dryRun = false,
-        packageAccess = "public",
-        root = "es",
-        srcFolder
-    } = args
+        libFolder,
+        output,
+        packageAccess
+    } = getConfig()
 
     if (!libFolder) {
         throw Error("Missing lib folder")
@@ -25,13 +24,7 @@ const publishLib = args => {
 
     validModules.forEach(module => {
         if (output.hasOwnProperty(module)) {
-            generateModules(module, output[module], {
-                libFolder,
-                srcFolder,
-                ignoreFiles,
-                root,
-                fileFormat
-            })
+            generateModules(module, output[module])
         }
     })
 

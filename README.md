@@ -14,6 +14,8 @@ So this is the main use case of this package, to be able to publish your library
 npm install publish-it --save-dev
 ```
 
+There are several options for config. Either pass an object to `publishLib`, or define a `.publishitrc`, `publishit` in package.json or CommonJS `publishit.config.js`.
+
 ```js
 const publishLib = require("publish-it")
 
@@ -21,7 +23,7 @@ publishLib({
     libFolder: "dist",
     srcFolder: "src",
     extraFilesCopy: ["README.md"],
-    ignoreFiles: "*.spec.js",
+    ignoreFiles: /spec./,
     dryRun: false,
     output: {
         es: true,
@@ -29,6 +31,22 @@ publishLib({
         cjs: "npm run anything"
     }
 })
+```
+or
+
+```json
+{
+    libFolder: "dist",
+    srcFolder: "src",
+    extraFilesCopy: ["README.md"],
+    ignoreFiles: /spec./,
+    dryRun: false,
+    output: {
+        es: true,
+        umd: "npm run something",
+        cjs: "npm run anything"
+    }
+}
 ```
 
 Add a script to your package.json file
