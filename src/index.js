@@ -1,6 +1,7 @@
-const { exec, cp, cd, mkdir } = require("shelljs")
+const { cp, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
+const publishPackage = require("./publish")
 const { getConfig, setConfig } = require("./config")
 
 const validModules = ["cjs", "es", "es5", "umd"]
@@ -8,13 +9,7 @@ const validModules = ["cjs", "es", "es5", "umd"]
 const publishLib = args => {
     setConfig(args)
 
-    const {
-        dryRun,
-        extraFilesCopy,
-        libFolder,
-        output,
-        packageAccess
-    } = getConfig()
+    const { extraFilesCopy, libFolder, output } = getConfig()
 
     if (!libFolder) {
         throw Error("Missing lib folder")
@@ -31,10 +26,7 @@ const publishLib = args => {
     cp("package.json", libFolder)
     cp("-R", extraFilesCopy, libFolder)
 
-    if (!dryRun) {
-        cd(libFolder)
-        exec(`npm publish --access ${packageAccess}`)
-    }
+    publishPackage()
 }
 
 module.exports = publishLib
