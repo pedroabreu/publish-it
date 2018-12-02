@@ -14,10 +14,6 @@ const publishLib = args => {
 
     const { extraFilesCopy, libFolder, output } = getConfig()
 
-    if (!libFolder) {
-        throw Error("Missing lib folder")
-    }
-
     mkdir("-p", libFolder)
 
     validModules.forEach(module => {

@@ -23,6 +23,14 @@ const setConfig = args => {
         ...args,
         ...(configFile && configFile.config)
     }
+
+    if (!config.libFolder) {
+        throw Error("Missing destination folder")
+    }
+
+    if (!config.srcFolder) {
+        throw Error("Missing source folder")
+    }
 }
 
 module.exports = {
