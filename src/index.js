@@ -14,10 +14,8 @@ const publishLib = args => {
 
     mkdir("-p", libFolder)
 
-    validModules.forEach(module => {
-        if (output.hasOwnProperty(module)) {
-            generateModules(module, output[module])
-        }
+    Object.keys(output).forEach(module => {
+        generateModules(module)
     })
 
     cp("package.json", libFolder)

@@ -36,11 +36,9 @@ const setConfig = args => {
         ...tempConfig,
         output: getValidOutput(tempConfig.output)
     }
-
-    console.log(config)
 }
 
-const getValidOutput = (output = {}) => {
+function getValidOutput(output = {}) {
     const validModules = ["cjs", "es", "es5", "umd"]
     const validOutput = {}
 
