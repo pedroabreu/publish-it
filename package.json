@@ -10,6 +10,9 @@
     "lint": "eslint 'src/**/*.js'",
     "publish-it": "node ./scripts/publish.js"
   },
+  "bin": {
+      "publish-it": "./cli"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.9.0",
@@ -21,6 +24,7 @@
     "prettier": "^1.15.2"
   },
   "dependencies": {
+    "commander": "^2.19.0",
     "cosmiconfig": "^5.0.7",
     "shelljs": "^0.8.3"
   }

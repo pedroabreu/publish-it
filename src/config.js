@@ -15,7 +15,7 @@ let config = {
 
 const getConfig = () => config
 
-const setConfig = (args) => {
+const setConfig = args => {
     const configFile = explorer.searchSync()
 
     config = {
