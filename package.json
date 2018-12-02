@@ -11,7 +11,7 @@
     "publish-it": "node ./scripts/publish.js"
   },
   "bin": {
-      "publish-it": "./cli"
+      "publish-it": "./cli.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
