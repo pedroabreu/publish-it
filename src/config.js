@@ -18,19 +18,39 @@ const getConfig = () => config
 const setConfig = args => {
     const configFile = explorer.searchSync()
 
-    config = {
+    const tempConfig = {
         ...getConfig(),
         ...args,
         ...(configFile && configFile.config)
     }
 
-    if (!config.libFolder) {
+    if (!tempConfig.libFolder) {
         throw Error("Missing destination folder")
     }
 
-    if (!config.srcFolder) {
+    if (!tempConfig.srcFolder) {
         throw Error("Missing source folder")
     }
+
+    config = {
+        ...tempConfig,
+        output: getValidOutput(tempConfig.output)
+    }
+
+    console.log(config)
+}
+
+const getValidOutput = (output = {}) => {
+    const validModules = ["cjs", "es", "es5", "umd"]
+    const validOutput = {}
+
+    validModules.forEach(module => {
+        if (output.hasOwnProperty(module)) {
+            validOutput[module] = output[module]
+        }
+    })
+
+    return validOutput
 }
 
 module.exports = {
