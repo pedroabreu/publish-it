@@ -1,7 +1,10 @@
+#!/usr/bin/env node
+
 const { cp, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
 const publishPackage = require("./publish")
+
 const { getConfig, setConfig } = require("./config")
 
 const validModules = ["cjs", "es", "es5", "umd"]

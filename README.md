@@ -58,6 +58,16 @@ Add a script to your package.json file
 }
 ```
 
+### publish-it cli
+
+You can use `npx` to use the cli.
+
+```
+npx publish-it
+```
+
+Config can still be specified on a rc file (or other options as stated before), or trough the cli. See `npx publish-it --help` for options.
+
 ## Configuration
 
 | name | type | Description | Default |
