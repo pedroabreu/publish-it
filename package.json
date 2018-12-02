@@ -1,6 +1,6 @@
 {
   "name": "publish-it",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Publish your library differently",
   "main": "index.js",
   "author": "Pedro Abreu <pmig.abreu@gmail.com>",
