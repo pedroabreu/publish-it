@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-
 const publishCli = require("commander")
-const packageJson = require(`${process.cwd()}/package.json`)
+const packageJson = require(`${__dirname}/package.json`)
 
 const publishLib = require("./index")
 
