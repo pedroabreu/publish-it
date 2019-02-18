@@ -38,7 +38,7 @@ publishCli
         commaToObject,
         {}
     )
-    .option("-n, --next [version]", "Publish as next version", false)
+    .option("-n, --next", "Publish as next version")
 
 const parsedArgs = publishCli.parse(process.argv)
 

@@ -6,6 +6,7 @@ let config = {
     dryRun: false,
     fileFormat: ["js"],
     libFolder: "dist",
+    next: false,
     output: {
         es: true
     },
