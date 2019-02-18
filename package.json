@@ -11,7 +11,7 @@
     "publish-it": "node ./src/cli.js"
   },
   "bin": {
-      "publish-it": "./cli.js"
+    "publish-it": "./cli.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
-    "cosmiconfig": "^5.0.7",
+    "cosmiconfig": "^5.1.0",
     "shelljs": "^0.8.3"
   }
 }
