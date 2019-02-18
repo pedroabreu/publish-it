@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const publishCli = require("commander")
-const packageJson = require(`${__dirname}/package.json`)
+const packageJson = require(`${process.cwd()}/package.json`)
 
 const publishLib = require("./index")
 
@@ -38,6 +38,7 @@ publishCli
         commaToObject,
         {}
     )
+    .option("-n, --next [version]", "Publish as next version", false)
 
 const parsedArgs = publishCli.parse(process.argv)
 

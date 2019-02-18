@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { cp, mkdir } = require("shelljs")
 
 const generateModules = require("./modules")
