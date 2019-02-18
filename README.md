@@ -81,3 +81,4 @@ Config can still be specified on a rc file (or other options as stated before), 
 | `packageAccess` | string | Publish public or restricted package | `public` |
 | `root` | string | One of `es`, `es5`, `cjs` or `umd` | `es` |
 | `output` | object | Type of files to output | --- |
+| `next` | boolean | Publish package as a next | false |

@@ -8,7 +8,7 @@
   "repository": "github:pedroabreu/publish-it",
   "scripts": {
     "lint": "eslint 'src/**/*.js'",
-    "publish-it": "node ./cli.js"
+    "publish-it": "node ./src/cli.js"
   },
   "bin": {
       "publish-it": "./cli.js"
