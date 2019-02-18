@@ -1,7 +1,7 @@
 {
-  "extends": ["node", "plugin:prettier/recommended"],
-  "parser": "babel-eslint",
-  "rules": {
-    "import/no-commonjs": 0
+    "extends": ["node", "plugin:prettier/recommended"],
+    "parser": "babel-eslint",
+    "rules": {
+        "import/no-commonjs": 0
     }
 }
