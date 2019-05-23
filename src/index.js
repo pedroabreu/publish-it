@@ -23,6 +23,7 @@ const publishLib = args => {
             .toString()
             .match(/.{1,5}/g)
             .join(".")
+            .replace("0", "")
 
         exec(`npm --no-git-tag-version version ${appVersion}`, { silent: true })
     }
